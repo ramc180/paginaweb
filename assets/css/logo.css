@@ -1,200 +1,306 @@
-
+/* Estilo para las imágenes en la sección de productos */
 .subir-imagen {
-    position: relative;
-    top: -10px;
-    width: 150px; /* ajusta el tamaño de la imagen */
-  }
-
-  .productos-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 20px;
-  }
-  
-  .producto {
-    flex: 0 0 auto;
-    width: 220px;
-    text-align: center;
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    box-shadow: none;
-  }
-  
-  .contenedor-imagen {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  
-  .contenedor-imagen img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .imagen-secundaria {
-    opacity: 0;
-  }
-  
-  .contenedor-imagen:hover .imagen-principal {
-    opacity: 0;
-  }
-  
-  .contenedor-imagen:hover .imagen-secundaria {
-    opacity: 1;
-  }
-  
-  .nombre {
-    font-weight: bold;
-    margin: 10px 0 5px;
-  }
-  
-  .precio {
-    color: #e53935;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  
-  .precio-anterior {
-    text-decoration: line-through;
-    color: #888;
-    margin-right: 5px;
-  }
-  
-  h2 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #2e8b57;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    font-size: 2.2em;
-    margin-bottom: 20px;
-  }
-  /* CARRUSER */
-  .slideshow-container {
-    width: 100%;             /* Hace que ocupe todo el ancho */
-    height: 100vh;           /* Hace que ocupe toda la altura de la pantalla */
-    margin: 0;               /* Elimina márgenes */
-    padding: 0;              /* Elimina relleno */
-    position: relative;
-    overflow: hidden;        /* Evita que las imágenes se desborden */
-    border-radius: 0;        /* Elimina bordes redondeados */
-    box-shadow: none;        /* Elimina sombras */
+  position: relative;
+  top: -10px; /* Ajusta la posición vertical de la imagen */
+  width: 150px; /* Ajusta el tamaño de la imagen */
 }
 
+/* Estilo para el contenedor de productos, permite desplazamiento horizontal */
+.productos-container {
+  display: flex; /* Usamos flexbox para disponer los productos en fila */
+  flex-wrap: nowrap; /* Los productos no se envuelven a una nueva línea */
+  overflow-x: auto; /* Permite desplazamiento horizontal si los productos exceden el ancho */
+  gap: 20px; /* Espacio entre productos */
+}
+
+/* Estilo de cada producto individual */
+.producto {
+  flex: 0 0 auto; /* Los productos tienen un tamaño fijo y no se estiran */
+  width: 220px; /* Tamaño fijo para cada producto */
+  text-align: center; /* Centra el texto dentro del producto */
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin bordes */
+  border-radius: 0; /* Sin bordes redondeados */
+  padding: 0; /* Sin relleno */
+  box-shadow: none; /* Sin sombras */
+}
+
+/* Estilo para el contenedor de imágenes de cada producto */
+.contenedor-imagen {
+  position: relative;
+  width: 100%; /* La imagen ocupa todo el ancho */
+  height: 250px; /* Fija una altura para las imágenes */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+  border: none; /* Sin bordes */
+  border-radius: 0; /* Sin bordes redondeados */
+  box-shadow: none; /* Sin sombra */
+}
+
+/* Estilo para las imágenes dentro del contenedor */
+.contenedor-imagen img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+  height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+  object-fit: contain; /* La imagen se ajusta sin distorsionarse, manteniendo su aspecto */
+  transition: opacity 0.3s ease-in-out; /* Transición suave para el cambio de opacidad */
+}
+
+/* Estilo para las imágenes secundarias */
+.imagen-secundaria {
+  opacity: 0; /* Oculta la imagen secundaria inicialmente */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Efecto al hacer hover en el contenedor de imágenes */
+.contenedor-imagen:hover .imagen-principal {
+  opacity: 0; /* Oculta la imagen principal cuando se pasa el ratón por encima */
+}
+
+.contenedor-imagen:hover .imagen-secundaria {
+  opacity: 1; /* Muestra la imagen secundaria cuando se pasa el ratón por encima */
+}
+
+/* Estilo del nombre del producto */
+.nombre {
+  font-weight: bold; /* Texto en negrita */
+  margin: 10px 0 5px; /* Espaciado alrededor del nombre */
+}
+
+/* Estilo para el precio del producto */
+.precio {
+  color: #e53935; /* Color rojo para el precio */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 18px; /* Tamaño de fuente para el precio */
+}
+
+/* Estilo para el precio anterior (tachado) */
+.precio-anterior {
+  text-decoration: line-through; /* Tachado */
+  color: #888; /* Color gris para el precio anterior */
+  margin-right: 5px; /* Espaciado a la derecha del precio */
+}
+
+/* Estilo del encabezado (título de la sección) */
+h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipo de fuente */
+  font-weight: 600; /* Peso de fuente en seminegrita */
+  letter-spacing: 1px; /* Espaciado entre las letras */
+  color: #2e8b57; /* Color verde */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra sutil al texto */
+  font-size: 2.2em; /* Tamaño de fuente grande */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Estilos para el carrusel de imágenes (slideshow) */
+.slideshow-container {
+  width: 100%; /* El carrusel ocupa todo el ancho */
+  height: 100vh; /* El carrusel ocupa toda la altura de la pantalla */
+  margin: 0; /* Elimina márgenes */
+  padding: 0; /* Elimina relleno */
+  position: relative; /* Para posicionar los elementos dentro del carrusel */
+  overflow: hidden; /* Oculta el contenido que sobresalga */
+  border-radius: 0; /* Elimina bordes redondeados */
+  box-shadow: none; /* Sin sombra */
+}
+
+/* Estilo de cada diapositiva en el carrusel */
 .mySlides {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+  display: none; /* Oculta las diapositivas por defecto */
+  position: absolute; /* Posiciona las diapositivas absolutamente dentro del contenedor */
+  width: 100%; /* Las diapositivas ocupan todo el ancho */
+  height: 100%; /* Las diapositivas ocupan toda la altura */
+  opacity: 0; /* Inicia con opacidad en 0 (invisible) */
 }
 
+/* Estilo de las imágenes dentro del carrusel */
 .mySlides img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Hace que la imagen cubra todo el espacio sin distorsionarse */
+  width: 100%; /* La imagen ocupa todo el ancho */
+  height: 100%; /* La imagen ocupa toda la altura */
+  object-fit: cover; /* La imagen cubre todo el espacio sin distorsionarse */
 }
 
+/* Estilo para el texto sobreimpreso en el carrusel */
 .text-overlay {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    color: white;
-    text-align: left;
-    max-width: 90%;
-    padding: 10px;
-    box-sizing: border-box;
+  position: absolute; /* Posiciona el texto sobre la imagen */
+  top: 50%; /* Centra verticalmente */
+  left: 10%; /* Desplaza hacia la izquierda */
+  transform: translateY(-50%); /* Ajusta la posición para centrar */
+  color: white; /* Color blanco para el texto */
+  text-align: left; /* Alinea el texto a la izquierda */
+  max-width: 90%; /* Limita el ancho máximo del texto */
+  padding: 10px; /* Agrega relleno alrededor del texto */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
 }
 
+/* Animación para el texto */
 .animate-text {
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transición suave */
 }
 
+/* Estilo para el subtítulo dentro del carrusel */
 .subtitle {
-    font-size: 1rem;
-    letter-spacing: 2px;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    color: #ffcc00;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 1rem; /* Tamaño de fuente pequeño */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  font-weight: 600; /* Peso de fuente en negrita */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  margin-bottom: 5px; /* Espaciado debajo */
+  color: #ffcc00; /* Color dorado */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra al texto */
 }
 
+/* Estilo para el título dentro del carrusel */
 .title {
-    font-size: 2rem;
-    font-weight: 800;
-    margin: 5px 0;
-    text-transform: uppercase;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 2rem; /* Tamaño de fuente grande */
+  font-weight: 800; /* Peso de fuente en negrita */
+  margin: 5px 0; /* Espaciado superior e inferior */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  color: #ffffff; /* Color blanco */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra fuerte */
 }
 
+/* Estilo para la descripción dentro del carrusel */
 .description {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #e0e0e0;
-    line-height: 1.4;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 1rem; /* Tamaño de fuente normal */
+  font-weight: 500; /* Peso de fuente semi-negrita */
+  color: #e0e0e0; /* Color gris claro */
+  line-height: 1.4; /* Altura de línea para un mejor espaciado entre las líneas */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra al texto */
 }
 
+/* Estilos para pantallas medianas */
 @media (min-width: 768px) {
-    .subtitle {
-        font-size: 1.2rem;
-        letter-spacing: 3px;
-        margin-bottom: 10px;
-    }
+  .subtitle {
+      font-size: 1.2rem; /* Aumenta el tamaño en pantallas medianas */
+      letter-spacing: 3px; /* Espaciado entre letras más grande */
+      margin-bottom: 10px; /* Mayor espacio debajo del subtítulo */
+  }
 
-    .title {
-        font-size: 3.5rem;
-        margin: 10px 0;
-    }
+  .title {
+      font-size: 3.5rem; /* Aumenta el tamaño del título */
+      margin: 10px 0; /* Espaciado mayor entre el título y la descripción */
+  }
 
-    .description {
-        font-size: 1.4rem;
-        line-height: 1.6;
-    }
+  .description {
+      font-size: 1.4rem; /* Aumenta el tamaño de la descripción */
+      line-height: 1.6; /* Ajusta la altura de línea */
+  }
 
-    .text-overlay {
-        max-width: 50%;
-        padding: 0;
-    }
+  .text-overlay {
+      max-width: 50%; /* Reduce el ancho del texto sobreimpreso */
+      padding: 0; /* Elimina el padding en pantallas más grandes */
+  }
 
-    .subtitle, .title, .description {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 400;
-        letter-spacing: 0.5px;
-        color: #ffffff;
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* Sombra más fuerte */
-        transition: all 0.3s ease-in-out;
-        z-index: 2;
-        position: relative;
-    }
+  .subtitle, .title, .description {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente de sistema */
+      font-weight: 400; /* Peso de fuente normal */
+      letter-spacing: 0.5px; /* Espaciado entre letras más suave */
+      color: #ffffff; /* Color blanco para el texto */
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* Sombra más fuerte */
+      transition: all 0.3s ease-in-out; /* Transición suave */
+      z-index: 2;
+      position: relative;
+  }
 
-    .title {
-        font-size: 2.5em;
-    }
+  .title {
+      font-size: 2.5em; /* Ajuste tamaño título */
+  }
+}
 
-    .subtitle {
-        font-size: 1.2em;
-        color: #f0f0f0; /* Un tono blanco ligeramente más suave */
-    }
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .text-overlay {
+      padding: 15px; /* Espaciado superior e inferior */
+  }
+}
+/* EMPIEZA SOBRE NOSOTROS*/
+.seccion-presentacione.elegante.legible {
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
 
-    .description {
-        font-size: 1em;
-        line-height: 1.6;
-        color: #f9f9f9;
-    }
+.contenedor-textos {
+  flex: 1;
+  padding-right: 60px;
+}
+
+h2 {
+  font-size: 3em;
+  color: #333; /* Color de texto oscuro para buena legibilidad */
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.eslogan {
+  font-size: 1.2em;
+  color: #555; /* Un gris más oscuro para el eslogan */
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+p {
+  line-height: 2.0; /* Aumenta el espacio entre líneas para mejorar la legibilidad */
+  color: #444; /* Un color de texto oscuro y legible */
+  margin-bottom: 20px;
+  font-size: 1.15em;
+}
+
+strong {
+  color: #007bff;
+  font-weight: 700;
+}
+
+.contenedor-imagenes {
+  flex-shrink: 0;
+  width: 45%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-imagenes img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contenedor-imagenes:hover img {
+  transform: scale(1.05);
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .seccion-presentacione.elegante.legible {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .contenedor-textos {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  .contenedor-imagenes {
+    width: 80%;
+    margin: 20px auto 0;
+  }
 }
