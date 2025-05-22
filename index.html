@@ -61,9 +61,13 @@ https://templatemo.com/tm-591-villa-agency
             <!-- Menú de navegación -->
             <ul class="nav">
               <li><a href="index.html" class="active"><i class="fa fa-home"></i> Inicio</a></li>
-              <li><a href="properties.html"><i class="fa fa-video-camera"></i> Videos</a></li>
-              <li><a href="property-details.html"><i class="fa fa-tags"></i> Productos</a></li>
-              <li><a href="about.html"><i class="fa fa-info-circle"></i> Sobre Nosotros</a></li>
+              <li><a href="#productos"><i class="fa fa-tags"></i> Productos</a></li>
+              <li><a href="#Nosotros"><i class="fa fa-info-circle"></i> Sobre Nosotros</a></li>
+              <li>
+  <a href="#" onclick="mostrarModal(); return false;">
+    <i class="fa fa-bell"></i> ANUNCIO
+  </a>
+</li>
               <li>
                 <a href="https://wa.me/51977502406" target="_blank">
                   <i class="fa fa-envelope"></i> Contáctanos
@@ -82,55 +86,28 @@ https://templatemo.com/tm-591-villa-agency
   </header>
   
   <!-- ***** Header Area End ***** -->
-
-  <section>
-    <div class="slideshow-container">
-        <!-- Slide 1 -->
-        <div class="mySlides fade slide">
-            <img src="assets/images/rojo.webp" alt="Imagen 1">
-            <div class="text-overlay">
-                <p class="subtitle animate-text">QUINOA INFLADA CUBIERTA DE CACAO EN POLVO</p>
-                <h1 class="title animate-text">POP DE QUINOA</h1>
-                <h1 class="title animate-text">CACAO</h1>
-                <p class="description animate-text">CACAO QUINOA es un superalimento a base de quinoa y 100% orgánico polvo de cacao.</p>
-            </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="mySlides fade slide">
-            <img src="assets/images/moz.webp" alt="Imagen 2">
-            <div class="text-overlay">
-                <p class="subtitle animate-text">QUINOA INFLADA CUBIERTA DE CACAO EN POLVO</p>
-                <h1 class="title animate-text">POP DE QUINOA</h1>
-                <h1 class="title animate-text">VAINILLA</h1>
-                <p class="description animate-text">VAINILLA QUINOA es un superalimento a base de quinoa con un toque de vainilla natural.</p>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="mySlides fade slide">
-            <img src="assets/images/nara.webp" alt="Imagen 3">
-            <div class="text-overlay">
-                <p class="subtitle animate-text">QUINOA INFLADA CUBIERTA DE CACAO EN POLVO</p>
-                <h1 class="title animate-text">POP DE QUINOA</h1>
-                <h1 class="title animate-text">NARANJA</h1>
-                <p class="description animate-text">NARANJA QUINOA fusiona el delicioso sabor cítrico con la quinoa inflada.</p>
-            </div>
-        </div>
-
-        <!-- More slides (images) can be added here -->
+ <div class="modal-fondo" id="modalAnuncio">
+    <div class="modal-contenido">
+      <button class="cerrar-btn" onclick="cerrarModal()">×</button>
+      <div class="slides" id="slider">
+        <img src="assets/images/bivvo11.webp" alt="Anuncio 1">
+        <img src="assets/images/bivvo22.webp" alt="Anuncio 2">
+        <img src="assets/images/bivvo01.webp" alt="Anuncio 3">
+      </div>
     </div>
-</section>
+  </div>
+
+
 
 <section style="margin-top: 10px;">
   <div>
-    <video width="1500" controls>
+    <video id="miVideo" width="1500" autoplay controls muted>
       <source src="assets/images/video.mp4" type="video/mp4">
       Tu navegador no soporta el elemento de video.
     </video>
   </div>
 </section>
-  </div>
+
   <section style="background-color: #fff; padding: 60px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: auto;">
       
@@ -166,10 +143,11 @@ https://templatemo.com/tm-591-villa-agency
   </section>
       
   
-  <section style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 20px; ">
+  <section id="productos" style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 20px; ">
     <link rel="stylesheet" href="estilos.css">
   
     <h2>LO NUEVO EN BIVVO MARKET</h2>
+    <br><br><br>
     <div class="productos-container">
       
       <div class="producto">
@@ -206,9 +184,46 @@ https://templatemo.com/tm-591-villa-agency
       </div>
   
     </div>
+    <br><br><br>
+     <div class="productos-container">
+      
+      <div class="producto">
+        <div class="contenedor-imagen">
+          <img class="imagen-principal" src="assets/images/bivvo3.webp" alt="Producto 1">
+          <img class="imagen-secundaria" src="assets/images/bivvo03.webp" alt="Producto 1 - Vista Alternativa">
+        </div>
+        <div class="nombre">Granola Avena Canela 400g</div>
+        <div class="precio">
+          <span class="precio-anterior">S/ 24.90</span> S/ 15.00
+        </div>
+      </div>
+  
+      <div class="producto">
+        <div class="contenedor-imagen">
+          <img class="imagen-principal" src="assets/images/bivvo4.webp" alt="Producto 2">
+          <img class="imagen-secundaria" src="assets/images/bivvo04.webp" alt="Producto 2 - Vista Alternativa">
+        </div>
+        <div class="nombre">Granola Avena Canela 400g</div>
+        <div class="precio">
+          <span class="precio-anterior">S/ 24.90</span> S/ 15.00
+        </div>
+      </div>
+  
+      <div class="producto">
+        <div class="contenedor-imagen">
+          <img class="imagen-principal" src="assets/images/bivvo5.webp" alt="Producto 3">
+          <img class="imagen-secundaria" src="assets/images/bivvo05.webp" alt="Producto 3 - Vista Alternativa">
+        </div>
+        <div class="nombre">Granola Avena Canela 400g</div>
+        <div class="precio">
+          <span class="precio-anterior">S/ 24.90</span> S/ 15.00
+        </div>
+      </div>
+  
+    </div>
   </section>
   
-  <section class="seccion-presentacione elegante legible">
+  <section id="Nosotros" class="seccion-presentacione elegante legible">
     <div class="contenedor-textos">
       <h2>Descubre Bivvo Market</h2>
       <p class="eslogan">Tu aliado para una vida naturalmente deliciosa y saludable.</p>

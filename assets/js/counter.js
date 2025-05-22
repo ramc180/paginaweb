@@ -104,3 +104,59 @@
     }
   });
   
+   // Slider automático
+    let slideIndex = 0;
+    let intervalo = null;
+
+    function iniciarSlider() {
+      const slider = document.getElementById("slider");
+      const totalSlides = slider.children.length;
+
+      intervalo = setInterval(() => {
+        slideIndex = (slideIndex + 1) % totalSlides;
+        slider.style.transform = `translateX(-${slideIndex * 800}px)`;
+      }, 2000);
+    }
+
+    function mostrarModal() {
+      document.getElementById("modalAnuncio").style.display = "flex";
+      iniciarSlider();
+    }
+
+    function cerrarModal() {
+      document.getElementById("modalAnuncio").style.display = "none";
+      clearInterval(intervalo);
+      slideIndex = 0;
+      document.getElementById("slider").style.transform = "translateX(0px)";
+    }
+
+    // Mostrar el anuncio automáticamente al cargar la página
+    window.onload = function () {
+      mostrarModal();
+    };
+    
+  // INICIO DE VIDEO
+     const video = document.getElementById('miVideo');
+  
+  // Hacer loop manual porque algunos navegadores tienen problemas con loop y controles juntos
+  video.addEventListener('ended', () => {
+    video.currentTime = 0;
+    video.play();
+  });
+
+  // Usamos Intersection Observer para detectar visibilidad de la sección
+  const videoSection = document.getElementById('videoSection');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Cuando la sección es visible -> reproducir video
+        video.play();
+      } else {
+        // Cuando la sección no es visible -> pausar video
+        video.pause();
+      }
+    });
+  }, { threshold: 0.5 }); // 50% visible para considerarse visible
+
+  observer.observe(videoSection);
